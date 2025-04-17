@@ -19,14 +19,16 @@ import jakarta.validation.constraints.Size;
 @Table( name = "tb_categorias" )
 public class Categorias {
 
-	
+	 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categorias", cascade = CascadeType.REMOVE)
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("Categorias")
 	private List<Produtos> produtos;
+	
 	
 	@NotBlank
 	@Size(min = 10, max = 500)

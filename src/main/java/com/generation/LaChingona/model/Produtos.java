@@ -30,16 +30,16 @@ public class Produtos {
 	@Size(min = 10, max = 500)
 	private String descricao;
 	
-	@NotBlank
+	
+	@NotNull
 	private Double preco;
 	
 	
 	@NotNull
-	@Size(min = 0)
 	private int quantidade;
 
 	@ManyToOne
-	@JsonIgnoreProperties("Produtos")
+	@JsonIgnoreProperties("produtos")
 	private Categorias categoria;
 	
 	// Get e Set
